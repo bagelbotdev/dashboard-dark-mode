@@ -57,11 +57,13 @@ function makeDarkMode() {
     },
   };
 
-  Object.keys(RULES).forEach((key) => {
-    const newStyling = RULES[key];
-    Object.keys(newStyling).forEach((styleKey) => {
-      document.querySelector(key).style[styleKey] = newStyling[styleKey];
-      console.log(document.querySelector(key));
+  setInterval(() => {
+    Object.keys(RULES).forEach((key) => {
+      const newStyling = RULES[key];
+      Object.keys(newStyling).forEach((styleKey) => {
+        document.querySelector(key).style[styleKey] = newStyling[styleKey];
+        console.log(document.querySelector(key));
+      });
     });
-  });
+  }, 3000)
 }
